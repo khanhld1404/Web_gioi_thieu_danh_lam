@@ -1,0 +1,40 @@
+.footer h3 {
+    color: #2D4271;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    width: 100%;
+}
+
+.footer a, .lh {
+    color: #2D4271;
+    font-size: 15px;
+}
+
+ul {
+    list-style-type: none;
+  }
+  #footer-social {
+    padding: 0;
+  }
+#footer-social li a .fa-brands{
+    font-size: 30px;
+}
+#footer-social li a img{
+    width: 30px;
+    height: 30px;
+}
+#footer-social li {
+    padding-right: 20px;
+}
+.footer {
+    background-color: #eee;
+  }
+  
+  .ctn {
+    padding: 0 40px;
+  }
+  
+  .footer ul {
+    padding: 0;
+  }

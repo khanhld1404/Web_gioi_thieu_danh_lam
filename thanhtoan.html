@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="utf-8">
+    <!-- boostrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- jquery link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Booking - Vietravel</title>
+
+
+    <link href="assets/css/main.f0591598.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .bread {
+            width: 100%;
+            height: 62px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            padding-top: 12px;
+            margin-bottom: 20px;
+        }
+
+        .checkout-main {
+            padding-top: 20px;
+        }
+
+        .product {
+            margin-bottom: 30px;
+        }
+
+        .product .product-content .s-rate>span {
+            align-items: center;
+            background: #fdc432;
+            border-radius: 5px;
+            color: #fff;
+            display: flex;
+            font-size: 16px;
+            font-weight: 700;
+            height: 32px;
+            justify-content: center;
+            line-height: 20px;
+            margin-right: 11px;
+            position: relative;
+            width: 42px;
+        }
+
+        .s-rate,
+        .s-comment {
+            display: flex;
+        }
+
+        .product .product-content .s-rate .s-comment h4 {
+            align-items: center;
+            color: #2d4271;
+            display: flex;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 20px;
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+
+        .product .product-content .title {
+            color: #2d4271;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 28px;
+        }
+
+        .product-content {
+            background-color: rgb(250, 247, 247);
+            padding: 10px 20px;
+        }
+
+        .booking-tour {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #2d4271;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 38px;
+            margin-bottom: 33px;
+            margin-top: 45px;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        .customer-contact .customer-contact-inner {
+            align-items: center;
+            background: #f9f9f9;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 25px;
+        }
+
+        .customer-contact .customer-contact-inner>* input {
+            background: #fff;
+            border: 1px solid #e7e7e7;
+            border-radius: 5px;
+            box-sizing: border-box;
+            height: 40px;
+            padding: 0 10px;
+        }
+
+        .customer>h3 {
+            color: #2d4271;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 28px;
+            width: 100%;
+        }
+
+        .customer {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .customer .change {
+            align-items: center;
+            border: 1px solid #e7e7e7;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 13px;
+            padding: 10px 15px;
+            width: 48%;
+        }
+
+        .change-title h4 {
+            align-items: center;
+            color: #2d4271;
+            display: flex;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        .customer .change .change-title p {
+            align-items: center;
+            color: #2d4271;
+            display: flex;
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+        .customer .change .change-number .number {
+            background: 0 0;
+            border: none;
+            color: #2d4271;
+            font-size: 27px;
+            line-height: 32px;
+            text-align: center;
+            width: 30px;
+            padding: 0 5px;
+        }
+
+        .checkbox-input-search label {
+            font-size: 17px;
+        }
+
+        .customer-notice {
+            margin-bottom: 30px;
+        }
+
+        .wrapper-new-input {
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, .08);
+            padding: 30px;
+        }
+
+        .wrap-info-customer-number-person-details {
+            margin-bottom: 30px;
+        }
+
+        .box-support .group-contact .phone {
+            align-items: center;
+            background: #4d4aef;
+            border-radius: 10px;
+            color: #fff;
+            display: flex;
+            height: 50px;
+            justify-content: center;
+            width: 183px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .box-support .group-contact .phone p {
+            line-height: 16px;
+            margin: 0;
+        }
+
+        .box-support .group-contact .mail {
+            align-items: center;
+            border-radius: 10px;
+            color: #4d4aef;
+            display: flex;
+            height: 50px;
+            justify-content: center;
+            width: 183px;
+        }
+
+        .box-support .group-contact {
+            align-items: center;
+            background: #fff;
+            border: 1px solid #4d4aef;
+            border-radius: 14px;
+            display: flex;
+            max-width: 350px;
+        }
+
+        .box-support .group-contact .mail p {
+            line-height: 16px;
+            margin: 0;
+        }
+
+        .group-checkout .go-tour .start .start-content h4 {
+            color: #2d4271;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 16px;
+            margin-bottom: 5px;
+        }
+
+        .group-checkout .go-tour .end .start-content h4 {
+            color: #2d4271;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 16px;
+            margin-bottom: 5px;
+        }
+
+        .go-tour .start .start-content .time {
+            align-items: center;
+            color: #2d4271;
+            display: flex;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 19px;
+            margin-bottom: 0;
+        }
+
+        .go-tour .end .start-content .time {
+            align-items: center;
+            color: #2d4271;
+            display: flex;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 19px;
+            margin-bottom: 0;
+        }
+
+        .total td {
+            font-size: 30px;
+            color: red;
+        }
+
+        .detail .btn-order {
+            background: linear-gradient(64.4deg, #e01600 21.33%, #fe2214 67.61%);
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: right;
+            text-transform: uppercase;
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            font-size: 17px;
+            height: 50px;
+            justify-content: center;
+            line-height: 21px;
+            width: 100%;
+        }
+
+        .bi {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="" style="padding-right: 0px;">
+
+    <div class="bread ">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" style="color: blue;">1. Nhập thông tin</li>
+                <li class="breadcrumb-item">2. Thanh toán</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container mb-5">
+        <div class="product row">
+            <div class="product-image col-lg-4">
+                <div class="image"><img src="https://media.travel.com.vn/Tour/tfd_220218051139_477288.jpg"
+                        class="img-fluid" alt="image"></div>
+            </div>
+            <div class="product-content col-lg-8">
+                <div class="s-rate">
+                    <span>9</span>
+                    <div class="s-comment">
+                        <h4>Tuyệt vời</h4>
+                        <p style="font-size: 13px; color: #2d4271;">358 quan tâm</p>
+                    </div>
+                </div>
+                <div class="ticket-no-wrap d-md-none">
+                    <div class="ticket-no"><i class="icon icon--ticket"></i>NDHAN1861-056-130524XE-F
+                    </div>
+                </div>
+                <p class="title" id="title" style="color: #2d4271;
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 28px;">Hà Nội - Sapa - Fansipan - Yên Tử - Hạ Long - Ninh Bình
+                    - Tràng An - Bái Đính | Kích cầu du lịch </p>
+                <div class="entry">
+                    <div class="entry-inner" style="font-size: 13px;">
+                        <span>Mã Tour <b>NDHAN1861-056-130524XE-F</b></span><br>
+                        <span>Khởi hành <b>13/05/2024</b></span><br>
+                        <span>Thời gian <b>6 ngày</b></span><br>
+                        <span>Nơi khởi hành <b>Hà Nội</b></span><br>
+                        <span>Số chỗ còn nhận <b>5</b></span><br>
+                        <span>Dịch vụ tùy chọn <b>LANDTOUR TRỌN GÓI</b></span>
+                    </div>
+                </div>
+                <div class="entry-mb d-md-none">
+                    <div class="entry-inner"><span>Khởi hành <b>13/05/2024Hà Nội</b></span><span>Số chỗ
+                            còn nhận <b>5</b></span><span>Số ngày <b>6 ngày</b></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="d-none d-lg-block">Tổng quan về chuyến đi</h2>
+                <h3>Thông tin liên lạc</h3>
+                <div class="customer-contact mb-3 w-100">
+                    <form class="customer-contact-inner w-100" action="#" method="get" id="form"
+                        style="border: 1px solid black;">
+                        <div class="d-flex">
+                            <div class="name me-5">
+                                <label>Họ và Tên <b>*</b></label>
+                                <input autocomplete="off" type="text" class="form-control" name="fullName" value=""
+                                    style="width: 350px;">
+                                <p class="errorform error-notes">Vui lòng nhập thông tin</p>
+                            </div>
+                            <div class="phone ">
+                                <label>Số điện thoại <b>*</b></label>
+                                <input type="number" class="form-control" name="phone" value="" style="width: 350px;">
+                                <p class="errorform error-notes">Vui lòng nhập thông tin</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="mail me-5">
+                                <label>Email <b>*</b></label>
+                                <input type="email" class="form-control" name="email" value="" style="width: 350px;">
+                                <p class="errorform error-notes">Vui lòng nhập thông tin</p>
+                            </div>
+
+                            <div class="addess">
+                                <label>Địa chỉ</label>
+                                <input type="text" class="form-control" name="address" value="" style="width: 350px;">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="customer">
+                    <h3>Hành khách</h3>
+                    <div class="change">
+                        <div class="change-title">
+                            <h4>Người lớn</h4>
+                            <p>Từ 12 tuổi</p>
+                        </div>
+                        <div class="change-number">
+                            <i class="bi bi-dash-circle"></i>
+                            <span class="number" id="var1" value="1">1</span>
+                            <i class="bi bi-plus-circle"></i>
+                        </div>
+                    </div>
+
+                    <div class="change">
+                        <div class="change-title">
+                            <h4>Trẻ em</h4>
+                            <p>Từ 5 - 11 tuổi</p>
+                        </div>
+                        <div class="change-number">
+                            <i class="bi bi-dash-circle"></i>
+                            <span class="number" id="var2" value="2">0</span>
+                            <i class="bi bi-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="change">
+                        <div class="change-title">
+                            <h4>Trẻ nhỏ</h4>
+                            <p>Từ 2 - 4 tuổi</p>
+                        </div>
+
+                        <div class="change-number">
+                            <i class="bi bi-dash-circle"></i>
+                            <span class="number" id="var3" value="3">0</span>
+                            <i class="bi bi-plus-circle"></i>
+                        </div>
+                    </div>
+                    <div class="change">
+                        <div class="change-title">
+                            <h4>Em bé</h4>
+                            <p>Từ 0 - 2 tuổi</p>
+                        </div>
+                        <div class="change-number">
+                            <i class="bi bi-dash-circle"></i>
+                            <span class="number" id="var4" value="4">0</span>
+                            <i class="bi bi-plus-circle"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="customer-notice">
+                    <div class="customer-notice-left">. Người lớn sinh trước ngày<b class="mx-1">16/05/2012</b><br>. Trẻ
+                        nhỏ sinh từ<b class="mx-1">17/05/2019</b>
+                        đến<b class="mx-1">16/05/2022</b></div>
+                    <div class="customer-notice-right">. Trẻ em sinh từ<b class="mx-1">17/05/2012</b>đến<b
+                            class="mx-1">16/05/2019</b><br>. Em bé sinh từ<b class="mx-1">17/05/2022</b>đến<b
+                            class="mx-1">18/05/2024</b></div>
+                </div>
+
+                <section class="wrap-info-customer-number-person-details mt-4 wrapper-new-input">
+                    <div class="title-section mb-3 title-hotel-flight-infor">Thông tin hành khách</div>
+                    <div class="group-fields-input-contact-adult group-fields-input-contact-wrapper mb-3">
+                        <div class="title-persona">Người lớn</div>
+                        <div class="row">
+                            <div class="col-lg-3 col-12">
+                                <div class="form-group"><label class="pb-1 font-700">Họ và tên <span
+                                            class="text-danger">*</span></label><input type="text"
+                                        class="form-control fullName hotel-flight-input" placeholder="Nhập họ tên"
+                                        name="fullName">
+                                    <div class="errorform error-notes">Vui lòng nhập thông tin</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-12">
+                                <div class="form-group select-custom-icon"><label class="pb-1 white-space-nowrap">Giới
+                                        tính <span class="text-danger">*</span></label><select
+                                        class="form-control title title-gender hotel-flight-input" name="gender">
+                                        <option value="1">Nam</option>
+                                        <option value="0">Nữ</option>
+                                    </select></div>
+                            </div>
+                            <div class="col-lg-5 col-12">
+                                <div class="row">
+                                    <div class="col-sm-4 col-4 mt-sm-0 mt-4">
+                                        <div class="form-group select-custom-icon"><label
+                                                class="pb-1 white-space-nowrap font-700">Ngày sinh <span
+                                                    class="text-danger">*</span></label><select
+                                                class="form-control birth-date hotel-flight-input" name="dayOfMonth">
+                                                <option value="-1">Ngày</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                            </select></div>
+                                    </div>
+                                    <div class="col-sm-4 col-4 mt-sm-0 mt-4">
+                                        <div class="form-group select-custom-icon"><label
+                                                class="pb-1">&nbsp;</label><select
+                                                class="form-control birth-month hotel-flight-input" name="monthOfYear">
+                                                <option value="-1">Tháng</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select></div>
+                                    </div>
+                                    <div class="col-sm-4 col-4 mt-sm-0 mt-4">
+                                        <div class="form-group select-custom-icon"><label
+                                                class="pb-1">&nbsp;</label><select
+                                                class="form-control birth-year birth-year-adult hotel-flight-input"
+                                                name="yearOfYear">
+                                                <option value="-1">Năm</option>
+                                                <option value="1955">1955</option>
+                                                <option value="1956">1956</option>
+                                                <option value="1957">1957</option>
+                                                <option value="1958">1958</option>
+                                                <option value="1959">1959</option>
+                                                <option value="1960">1960</option>
+                                                <option value="1961">1961</option>
+                                                <option value="1962">1962</option>
+                                                <option value="1963">1963</option>
+                                                <option value="1964">1964</option>
+                                                <option value="1965">1965</option>
+                                                <option value="1966">1966</option>
+                                                <option value="1967">1967</option>
+                                                <option value="1968">1968</option>
+                                                <option value="1969">1969</option>
+                                                <option value="1970">1970</option>
+                                                <option value="1971">1971</option>
+                                                <option value="1972">1972</option>
+                                                <option value="1973">1973</option>
+                                                <option value="1974">1974</option>
+                                                <option value="1975">1975</option>
+                                                <option value="1976">1976</option>
+                                                <option value="1977">1977</option>
+                                                <option value="1978">1978</option>
+                                                <option value="1979">1979</option>
+                                                <option value="1980">1980</option>
+                                                <option value="1981">1981</option>
+                                                <option value="1982">1982</option>
+                                                <option value="1983">1983</option>
+                                                <option value="1984">1984</option>
+                                                <option value="1985">1985</option>
+                                                <option value="1986">1986</option>
+                                                <option value="1987">1987</option>
+                                                <option value="1988">1988</option>
+                                                <option value="1989">1989</option>
+                                                <option value="1990">1990</option>
+                                                <option value="1991">1991</option>
+                                                <option value="1992">1992</option>
+                                                <option value="1993">1993</option>
+                                                <option value="1994">1994</option>
+                                                <option value="1995">1995</option>
+                                                <option value="1996">1996</option>
+                                                <option value="1997">1997</option>
+                                                <option value="1998">1998</option>
+                                                <option value="1999">1999</option>
+                                                <option value="2000">2000</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2012">2012</option>
+                                            </select></div>
+                                    </div>
+                                    <div class="errorform error-notes">Vui lòng nhập thông tin</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 col-2 mt-sm-0 mt-4">
+                                <div class="form-group select-custom-icon"><label class="pb-1">Phòng đơn</label>
+                                    <div class="form-check form-switch"><input class="form-check-input" type="checkbox"
+                                            name="isRoomSurcharge" value="1" checked=""
+                                            style="pointer-events: none;"><label
+                                            class="form-check-label">1.900.000&nbsp;₫</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="customer-save">
+                    <h3>Quý khách có ghi chú lưu ý gì, hãy nói với chúng tôi !</h3>
+                    <div class="customer-save-inner">
+                        <p>Ghi chú thêm</p><textarea class="form-control" cols="20" name="note"
+                            placeholder="Vui lòng nhập nội dung lời nhắn bằng tiếng Anh hoặc tiếng Việt"
+                            rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="box-support">
+                    <label style="margin-bottom: 20px;">Quý khách cần hỗ trợ?</label>
+                    <div class="group-contact" style="margin-bottom: 20px;"><a
+                            href="https://webcall.talking.vn/frame-click-to-call/new?code=tCEZl1-MKPuA6JU-czVAScCb0pPkHmPt"
+                            target="_blank" class="phone">
+                            <i class="bi bi-telephone me-3"></i>
+                            <p>Gọi miễn phí <br>qua internet</p>
+                        </a><a href="mailto:info@vietravel.com" class="mail">
+                            <i class="bi bi-envelope me-3"></i>
+                            <p>Gửi yêu cầu <br>hỗ trợ ngay</p>
+                        </a></div>
+                </div>
+                <div class="group-checkout">
+                    <h3>Tóm tắt chuyến đi</h3><span>Dịch vụ tùy chọn <b>LANDTOUR TRỌN GÓI </b></span>
+                    <p class="package-title">Tour trọn gói <span> (5 khách)</span></p>
+                    <div class="product">
+                        <div class="product-image"><img
+                                src="https://media.travel.com.vn/Tour/tfd_220218051139_477288.jpg" class="img-fluid"
+                                alt="image"></div>
+                        <div class="product-content">
+                            <p class="title">Hà Nội - Sapa - Fansipan - Yên Tử - Hạ Long - Ninh Bình - Tràng
+                                An - Bái Đính | Kích cầu du lịch</p>
+                        </div>
+                    </div>
+                    <div class="go-tour">
+                        <div class="start"></i>
+                            <div class="start-content">
+                                <h4>Bắt đầu chuyến đi</h4>
+                                <p class="time">T2, 13 THÁNG 5 NĂM 2024</p>
+                                <p class="from"></p>
+                            </div>
+                        </div>
+                        <div class="end">
+                            <div class="start-content">
+                                <h4>Kết thúc chuyến đi</h4>
+                                <p class="time">T7, 18 THÁNG 5 NĂM 2024</p>
+                                <p class="from"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <table>
+                            <thead class="">
+                                <tr>
+                                    <th class="l1">Hành khách</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="detail-1">
+                                    <td>Người lớn</td>
+                                    <td class="t-price text-right d-flex">
+                                        <p class="me-3 pt-3 so-luong-1">1</p>
+                                        <p class="pt-3"> x 8.190.000&nbsp;₫</p>
+                                    </td>
+                                </tr>
+
+                                <tr class="a detail-2">
+                                    <td>Trẻ em</td>
+                                    <td class="t-price text-right d-flex">
+                                        <p class="me-3 so-luong-2 pt-3">0</p>
+                                        <p class="pt-3"> x 4.095.000&nbsp;₫</p>
+                                    </td>
+                                </tr>
+
+                                <tr class="a detail-3">
+                                    <td>Trẻ nhỏ</td>
+                                    <td class="t-price text-right d-flex">
+                                        <p class="me-3 so-luong-3 pt-3">0</p>
+                                        <p class="pt-3"> x 0&nbsp;₫</p>
+                                    </td>
+                                </tr>
+
+                                <tr class="a detail-4">
+                                    <td>Em bé</td>
+                                    <td class="t-price text-right d-flex">
+                                        <p class="me-3 so-luong-4 pt-3">0</p>
+                                        <p class="pt-3"> x 0&nbsp;₫</p>
+                                    </td>
+                                </tr>
+                                <tr class="detail">
+                                    <td>Phụ thu phòng đơn</td>
+                                    <td class="t-price text-right">1.900.000&nbsp;₫</td>
+                                </tr>
+                                <tr class="cuppon promotion-broder">
+                                    <td colspan="2">
+                                        <div class="row" style="margin-top: 20px;">
+                                            <div class="col-4">Mã giảm giá</div>
+                                            <div class="col-8 p-0">
+                                                <div class="row">
+                                                    <div class="col-7 p-0"><input class="form-control mr-2 w-10"
+                                                            placeholder="Thêm mã" required="" type="text"
+                                                            data-gtm-form-interact-field-id="0" value="">
+                                                    </div>
+                                                    <div class="col-5"><input type="button" class="btn btn-success"
+                                                            id="btnDiscountCode" value="Áp dụng"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="total">
+                                    <td style="padding-top: 30px;">Tổng tiền </td>
+                                    <td class="t-price text-right d-flex" style="padding-top: 30px; color: #e01600;
+                                    font-size: 22px;
+                                    font-weight: 700;
+                                    line-height: 28px;
+                                    text-align: right;
+                                    text-transform: lowercase;">
+                                        <p id="tong-tien" class="pt-3">8.190.000</p><p class="pt-3 ms-3">₫</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary btn-order mt-5" onclick="thanhtoan()">Đặt ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer" id="footer"></div>
+    <script src="assets/js/header_footer.js"></script>
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <script>
+        function thanhtoan() {
+            window.location.href = "qr.html";
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            function insertDots(numberString) {
+                let result = '';
+                let count = 0;
+
+                for (let i = numberString.length - 1; i >= 0; i--) {
+                    result = numberString[i] + result;
+                    count++;
+                    if (count === 3 && i !== 0) {
+                        result = '.' + result;
+                        count = 0;
+                    }
+                }
+
+                return result;
+            }
+            function setTotal() {
+                var total = parseInt($('.so-luong-1').text()) * 8190000 + parseInt($('.so-luong-2').text()) * 4095000 + 1900000
+                $('#tong-tien').text(insertDots(total.toString()))
+            }
+
+            $('.bi-dash-circle').on('click', function () {
+                var $span = $(this).next('.number');
+                var currentVal = parseInt($span.text() + '&nbsp');
+
+                if ($span.attr('id') === 'var1') {
+                    if (currentVal > 1) {
+                        currentVal = currentVal - 1
+                        $span.text(currentVal);
+                        setValue($span, currentVal)
+                        setTotal()
+                    }
+                } else if (currentVal > 0) {
+                    currentVal = currentVal - 1
+                    $span.text(currentVal);
+                    setValue($span, currentVal)
+                    setTotal()
+                }
+            });
+
+            $('.bi-plus-circle').on('click', function () {
+                var $span = $(this).prev();
+                var currentVal = parseInt($span.text());
+                if (check()) {
+                    currentVal = currentVal + 1
+                    $span.text(currentVal);
+                    setValue($span, currentVal)
+                    setTotal()
+                } else {
+                    alert("Số người tối đa là 5 người!")
+                }
+            });
+            var check = function () {
+                var a = 1 + parseInt($('#var1').text()) + parseInt($('#var2').text()) + parseInt($('#var3').text()) + parseInt($('#var4').text())
+                if (a > 5) return false;
+                else return true
+            }
+            $('.a').hide()
+            function setValue(span, value) {
+                if (value === 0) {
+                    $(`.detail-${span.attr('value')}`).hide()
+                } else {
+                    $(`.detail-${span.attr('value')}`).show()
+                    $(`.detail-${span.attr('value')} .so-luong-${span.attr('value')}`).text(value)
+                }
+            }
+
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>

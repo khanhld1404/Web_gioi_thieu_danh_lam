@@ -1,0 +1,22 @@
+<!-- trang2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang 2</title>
+</head>
+<body>
+    <h1 id="displayData"></h1>
+
+    <script>
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        const data = getQueryParameter('data');
+        document.getElementById('displayData').innerText = data;
+    </script>
+</body>
+</html>

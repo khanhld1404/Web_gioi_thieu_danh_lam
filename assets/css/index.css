@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+  --orange: #ffa500;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+*{
+  
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  transition: all .2s linear;
+}
+
+
+html{
+  font-size: 62.5%;
+  
+  
+}
+
+
+/* * {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+} */
+
+/* Begin css heading */
+.heading {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.heading span {
+  font-size: 40px;
+  background: rgba(255, 165, 0, .2);
+  color: var(--orange);
+  border-radius: .5rem;
+  padding: .2rem 1rem;
+  text-transform: uppercase;
+}
+
+.heading span.space {
+  background: none;
+}
+/* end css heading */
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--orange);
+  color: #fff;
+  padding: .8rem 3rem;
+  border: .2rem solid var(--orange);
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.btn:hover {
+  background: rgba(255, 165, 0, .2);
+  color: var(--orange);
+}
+
+/* begin login form */
+.login-form-container {
+  position: fixed;
+  top: -120%;
+  left: 0;
+  z-index: 10000;
+  min-height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, .7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form-container.active {
+  top: 0;
+}
+
+.login-form-container form {
+  margin: 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: .5rem;
+  background: #fff;
+  width: 50rem;
+}
+
+.login-form-container form h3 {
+  font-size: 3rem;
+  color: #444;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.login-form-container form .box {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.7rem;
+  color: #333;
+  margin: .6rem 0;
+  border: .1rem solid rgba(0, 0, 0, .3);
+  text-transform: none;
+}
+
+.login-form-container form .box:focus {
+  border-color: var(--orange);
+}
+
+.login-form-container form #remember {
+  margin: 2rem 0;
+}
+
+.login-form-container form label {
+  font-size: 1.5rem;
+}
+
+.login-form-container form .btn {
+  display: block;
+  width: 100%;
+}
+
+.login-form-container form p {
+  padding: .5rem 0;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.login-form-container form p a {
+  color: var(--orange);
+}
+
+.login-form-container form p a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.login-form-container #form-close {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  font-size: 5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sign-in {
+  color: #ffa500;
+}
+
+/* end login form */
+#menu-bar {
+  color: #fff;
+  border: .1rem solid #fff;
+  border-radius: .5rem;
+  font-size: 3rem;
+  padding: .5rem 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* 2 - begin css carocel */
+#carouselExampleCaptions .carousel-inner .carousel-item img {
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  #carouselExampleCaptions {
+      margin-top: 74px;
+  }
+}
+
+/* begin danhlam */
+.card-body .card-title {
+  color: #2D4271;
+  font-size: 25px;
+}
+
+.card {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 0;
+}
+
+.danhlam {
+  padding: 20px;
+
+}
+
+.danhsachdanhlam {
+  padding: 0 40px;
+}
+
+.danhlam p {
+  color: #2D4271;
+  font-size: 16px;
+}
+
+.anhdanhlam {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.danhlam a .card:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* end danhlam */
+
+/* begin service */
+.services .container .box-container {
+  
+}
+
+.services .container .box-container .box {
+  
+  border-radius: .5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.services .container .box-container .box i {
+  padding: 1rem;
+  font-size: 2rem;
+  color: var(--orange);
+}
+
+.services .container .box-container .box h3 {
+  color: #2D4271;
+  font-size: 25px;
+}
+
+.services .container .box-container .box p {
+  font-size: 18px;
+  color: #2D4271;
+  padding: 1rem 0;
+}
+
+.services .container .box-container .box:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+}
+
+/* end service */
+
+/* begin review */
+.review {
+  overflow: hidden;
+}
+.review .review-slider {
+  padding-bottom: 2rem;
+}
+
+.review .box {
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+  border-radius: .5rem;
+}
+
+.review .box img {
+  height: 13rem;
+  width: 13rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.review .box h3 {
+  color: #2D4271;
+  font-size: 25px;
+}
+
+.review .box p {
+  color: #2D4271;
+  font-size: 18px;
+  padding: 1rem 0;
+}
+
+.review .box .stars i {
+  color: var(--orange);
+  font-size: 1.7rem;
+}
+
+/* end review */
+
+/* begin contact */
+
+/* .index-form-contact .inputBox input {
+  width: 360px;
+  height: 50px;
+} */
+
+.contact .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+  align-items: center;
+}
+
+.contact .row .image{
+  flex:1 1 35rem;
+}
+
+.contact .row .image img{
+  width:100%;
+}
+
+.contact .row form{
+  flex:1 1 50rem;
+  padding:2rem;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+  border-radius: .5rem;
+}
+
+.contact .row form .inputBox{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact .row form .inputBox input, .contact .row form textarea{
+  width:49%;
+  margin:1rem 0;
+  padding:1rem;
+  font-size: 1.7rem;
+  color:#333;
+  background:#f7f7f7;
+  text-transform: none;
+}
+
+.contact .row form textarea{
+  height: 15rem;
+  resize: none;
+  width:100%;
+}
+
+
+/* end contact */
+
+/* begin footer */
+
+
+/* end footer */
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 1090px) {
+  .menu {
+    width: 700px;
+  }
+
+}
+
+/* ------------------------  */
+@media (max-width: 992px) {
+  /* #carouselExampleCaptions {
+    height: 450px;
+  } */
+}
+
+@media (max-width: 940px) {
+  .menu li a {
+    font-size: 15px;
+  }
+
+  .menu {
+    width: 500px;
+  }
+
+}
+
+/* ------------------------  */
+@media (max-width: 768px) {
+  i.icon1 {
+    display: block;
+  }
+
+  #carouselExampleCaptions {
+    margin-top: 74px;
+  }
+
+  .menu-2 {
+    position: absolute;
+    top: 74px;
+    background-color: #f7f7f7;
+    display: block;
+    width: 100%;
+    padding-left: 30px;
+  }
+
+  .menu-2 li {
+    border-bottom: 1px solid black;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  h1.heading span {
+    font-size: 10px;
+  }
+
+  .final p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  /* #carouselExampleCaptions {
+    height: 200px;
+  } */
+  h1.heading span {
+    padding: .2rem 0rem;
+  }
+}
+
+/* begin footer */
+.footer {
+  margin-bottom: 20px;
+  padding-top: 30px;
+}
+
+.footer h3 {
+  font-size: 30px;
+}
+
+.footer p,
+a {
+  font-size: 16px;
+}
+
+.social ul {
+  display: flex;
+}
+
+.social ul li {
+  margin-left: 10px;
+}
+
+.social ul li a i {
+  font-size: 30px;
+}
+
+.social ul li img {
+  width: 30px;
+  height: auto;
+}
+
+.hotline {
+  width: 100px;
+  height: 45px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 9px;
+  border-radius: 24px;
+  margin-bottom: 20px;
+}
+
+.chungnhan img {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.final p {
+  font-size: 18px;
+}
+
+/* end footer */
+body.modal-open {
+  overflow: hidden;
+  padding-right: 0 !important;
+}
